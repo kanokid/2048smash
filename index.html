@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>2048cupcakes</title>
+        <link rel="stylesheet" href="style.css" />
+        <link rel="icon" href="favicon.ico" sizes="any" />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="favicon-16x16.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="192x192"
+            href="android-chrome-192x192.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="512x512"
+            href="android-chrome-512x512.png"
+        />
+        <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <div class="game-ui">
+            <h1>2048cupcakes</h1>
+            <p>
+                use arrow keys to slide cupcakes. merge identical cupcakes to
+                make bigger ones.
+            </p>
+            <div class="score-bar">
+                <div>Score: <span id="score">0</span></div>
+                <button id="restart">Restart</button>
+            </div>
+            <div id="grid" class="grid"></div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
