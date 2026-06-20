@@ -9,7 +9,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(180deg, #ffd4d4 0%, #fff4f2 100%);
+    background: linear-gradient(180deg, #39e75f 0%, #abf7b1 100%);
     font-family: "Comic Relief", sans-serif;
 }
 
@@ -24,11 +24,11 @@ body {
 
 h1 {
     font-size: 2rem;
-    color: #8b3d7f;
+    color: #3d8b4b;
 }
 
 p {
-    color: #4a2a4b;
+    color: #234a2d;
     margin-bottom: 16px;
 }
 
@@ -40,7 +40,7 @@ p {
 }
 
 button {
-    background: #ff7eb9;
+    background: #46e564;
     color: white;
     border: none;
     border-radius: 12px;
@@ -66,45 +66,62 @@ button {
     align-items: center;
     font-weight: bold;
     font-size: 1rem;
-    color: #3f1c3d;
-    background: #fff0f6;
+    color: #143f19;
+    background: #aff0af;
+}
+
+.welcome-screen {
+    width: 360px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 24px;
+    padding: 24px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
 }
 
 .cell[data-value="2"] {
-    background: #ffe3f1;
+    background: #b9ffd2;
 }
 .cell[data-value="4"] {
-    background: #ffb3d8;
+    background: #82ffb4;
 }
 .cell[data-value="8"] {
-    background: #ff92ce;
+    background: #64ff96;
 }
 .cell[data-value="16"] {
-    background: #ff70c7;
+    background: #4bff7d;
 }
 .cell[data-value="32"] {
-    background: #ff40b2;
+    background: #36f576;
 }
 .cell[data-value="64"] {
-    background: #e82e86;
+    background: #2ee868;
 }
 .cell[data-value="128"] {
-    background: #c61d6c;
+    background: #1dc658;
     color: white;
 }
 .cell[data-value="256"] {
-    background: #a60058;
+    background: #00a644;
     color: white;
 }
 .cell[data-value="512"] {
-    background: #7f0045;
+    background: #00753b;
     color: white;
 }
 .cell[data-value="1024"] {
-    background: #5a003c;
+    background: #004628;
     color: white;
 }
 .cell[data-value="2048"] {
-    background: #33002a;
+    background: #003314;
     color: white;
+}
+audio {
+    position: fixed !important;
+    bottom: 20px !important;
+    right: 25px !important;
+    left: auto !important; /* Resets any left alignment */
+    top: auto !important; /* Resets any top alignment */
+    z-index: 99999 !important; /* Keeps it above everything else */
 }

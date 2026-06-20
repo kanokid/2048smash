@@ -1,11 +1,14 @@
 const gridElement = document.getElementById("grid");
 const scoreElement = document.getElementById("score");
 const restartButton = document.getElementById("restart");
+const gameUI = document.getElementById("game-ui");
 
 const size = 4;
 let grid = [];
 let score = 0;
 let canMove = false;
+
+let welcomeScreenShown = false;
 
 function createGrid() {
   grid = Array.from({ length: size }, () => Array(size).fill(0));
@@ -23,6 +26,18 @@ function drawGrid() {
     }
   }
   scoreElement.textContent = score;
+}
+
+function addRandomCupcake() {
+  const empty = [];
+  for (let r = 0; r < size; r++) {
+    for (let c = 0; c < size; c++) {
+      if (grid[r][c] === 0) empty.push({ r, c });
+    }
+  }
+  if (empty.length === 0) return;
+  const { r, c } = empty[Math.floor(Math.random() * empty.length)];
+  grid[r][c] = Math.random() < 0.9 ? 2 : 4;
 }
 
 function slide(row) {
@@ -126,11 +141,18 @@ function startGame() {
 
 restartButton.addEventListener("click", startGame);
 
-document.addEventListener("keydown", (event) => {
-  if (event.key === "ArrowLeft") handleMove("left");
-  if (event.key === "ArrowRight") handleMove("right");
-  if (event.key === "ArrowUp") handleMove("up");
-  if (event.key === "ArrowDown") handleMove("down");
+document.getElementById("start").addEventListener("click", () => {
+  document.querySelector(".welcome-screen").hidden = true;
+  gameUI.hidden = false;
+  startGame();
 });
-
-startGame();
+document.addEventListener("keydown", (event) => {
+  if (event.key === "ArrowLeft" || event.key === "A" || event.key === "a")
+    handleMove("left");
+  if (event.key === "ArrowRight" || event.key === "D" || event.key === "d")
+    handleMove("right");
+  if (event.key === "ArrowUp" || event.key === "W" || event.key === "w")
+    handleMove("up");
+  if (event.key === "ArrowDown" || event.key === "S" || event.key === "s")
+    handleMove("down");
+});

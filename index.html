@@ -39,7 +39,15 @@
         />
     </head>
     <body>
-        <div class="game-ui">
+        <div class="welcome-screen">
+            <h1>2048cupcakes</h1>
+            <p>
+                use arrow keys to slide cupcakes. merge identical cupcakes to
+                make bigger ones. music is at the bottom right.
+            </p>
+            <button id="start">Start The Game!</button>
+        </div>
+        <div class="game-ui" id="game-ui" hidden>
             <h1>2048cupcakes</h1>
             <p>
                 use arrow keys to slide cupcakes. merge identical cupcakes to
@@ -50,7 +58,10 @@
                 <button id="restart">Restart</button>
             </div>
             <div id="grid" class="grid"></div>
+            <audio controls loop>
+                <source src="bgm1.mp3" type="audio/mpeg"
+            </audio>
         </div>
-        <script src="script.js"></script>
+        <script src="script.js" defer></script>
     </body>
 </html>
